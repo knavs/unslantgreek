@@ -4,10 +4,10 @@
 \newsavebox{\foobox}
 \newlength{\foodim}
 
-% Define the \slantbox command to unslant symbols by a specified factor.
+% Define the \antboxsl command to unslant symbols by a specified factor.
 %  - #1 is the optional slant factor (default is -.16 in the \unslant command).
 %  - #2 is the content (typically a Greek letter) to be displayed.
-\newcommand{\slantbox}[2][0]{\mbox{%
+\newcommand{\antboxsl}[2][0]{\mbox{%
         \sbox{\foobox}{#2}%          % Store the content in \foobox
         \foodim=#1\wd\foobox         % Calculate shift distance based on slant factor
         \hskip \wd\foobox            % Horizontal space equal to box width
@@ -19,50 +19,50 @@
         \hskip 0.5\foodim            % Adjust back to center content
 }}
 
-% Define \unslant with a default slant factor of -.16 (adjustable if needed)
-\newcommand\unslant[2][-.25]{\slantbox[#1]{$#2$}}
+% Define \unslant with a default slant factor of -.25 (adjustable if needed)
+\newcommand\unslant[2][-.25]{\antboxsl[#1]{$#2$}}
 
-% Original Letters as \slalpha, \slbeta, etc.:
+% Original Letters as \alphasl, \betasl, etc.:
 %  - The original (slanted) versions of Greek letters are saved under new names
-%    prefixed with "sl" (e.g., \slalpha, \slbeta).
+%    prefixed with "sl" (e.g., \alphasl, \betasl).
 %  - This makes the original slanted versions accessible in the document if needed.
 
 % Redefinitions for Upright Letters:
 %  - Each Greek letter now defaults to the unslanted version, achieved by calling
-%    \unslant on the original symbol (saved under the \sl prefix).
+%    \unslant on the original symbol (saved under the \sl suffix).
 %  - This means the user will see upright versions by default when using standard
-%    Greek letter commands, but can still access the slanted versions with the \sl prefix.
+%    Greek letter commands, but can still access the slanted versions with the \sl suffix.
 
 % Lowercase Greek letters
-\let\slalpha=\alpha           \def\alpha{\unslant{\slalpha}}
-\let\slbeta=\beta             \def\beta{\unslant{\slbeta}}
-\let\slgamma=\gamma           \def\gamma{\unslant{\slgamma}}
-\let\sldelta=\delta           \def\delta{\unslant[-.2]{\sldelta}}
-\let\slepsilon=\epsilon       \def\epsilon{\unslant[-.1]{\slepsilon}}
-\let\slvarepsilon=\varepsilon \def\varepsilon{\unslant{\slvarepsilon}}
-\let\slzeta=\zeta             \def\zeta{\unslant[-.15]{\slzeta}}
-\let\sleta=\eta               \def\eta{\unslant{\sleta}}
-\let\sltheta=\theta           \def\theta{\unslant{\sltheta}}
-\let\slvartheta=\vartheta     \def\vartheta{\unslant{\slvartheta}}
-\let\sliota=\iota             \def\iota{\unslant{\sliota}}
-\let\slkappa=\kappa           \def\kappa{\unslant{\slkappa}}
-\let\sllambda=\lambda         \def\lambda{\unslant{\sllambda}}
-\let\slmu=\mu                 \def\mu{\unslant{\slmu}}
-\let\slnu=\nu                 \def\nu{\unslant{\slnu}}
-\let\slxi=\xi                 \def\xi{\unslant[-.15]{\slxi}}
-\let\slpi=\pi                 \def\pi{\unslant{\slpi}}
-\let\slvarpi=\varpi           \def\varpi{\unslant{\slvarpi}}
-\let\slrho=\rho               \def\rho{\unslant{\slrho}}
-\let\slvarrho=\varrho         \def\varrho{\unslant{\slvarrho}}
-\let\slsigma=\sigma           \def\sigma{\unslant{\slsigma}}
-\let\slvarsigma=\varsigma     \def\varsigma{\unslant{\slvarsigma}}
-\let\sltau=\tau               \def\tau{\unslant{\sltau}}
-\let\slupsilon=\upsilon       \def\upsilon{\unslant{\slupsilon}}
-\let\slphi=\phi               \def\phi{\unslant{\slphi}}
-\let\slvarphi=\varphi         \def\varphi{\unslant{\slvarphi}}
-\let\slchi=\chi               \def\chi{\unslant{\slchi}}
-\let\slpsi=\psi               \def\psi{\unslant{\slpsi}}
-\let\slomega=\omega           \def\omega{\unslant{\slomega}}
+\let\alphasl=\alpha           \def\alpha{\unslant{\alphasl}}
+\let\betasl=\beta             \def\beta{\unslant{\betasl}}
+\let\gammasl=\gamma           \def\gamma{\unslant{\gammasl}}
+\let\deltasl=\delta           \def\delta{\unslant[-.2]{\deltasl}}
+\let\epsilonsl=\epsilon       \def\epsilon{\unslant[-.1]{\epsilonsl}}
+\let\varepsilonsl=\varepsilon \def\varepsilon{\unslant{\varepsilonsl}}
+\let\zetasl=\zeta             \def\zeta{\unslant[-.15]{\zetasl}}
+\let\etasl=\eta               \def\eta{\unslant{\etasl}}
+\let\thetasl=\theta           \def\theta{\unslant{\thetasl}}
+\let\varthetasl=\vartheta     \def\vartheta{\unslant{\varthetasl}}
+\let\iotasl=\iota             \def\iota{\unslant{\iotasl}}
+\let\kappasl=\kappa           \def\kappa{\unslant{\kappasl}}
+\let\lambdasl=\lambda         \def\lambda{\unslant{\lambdasl}}
+\let\musl=\mu                 \def\mu{\unslant{\musl}}
+\let\nusl=\nu                 \def\nu{\unslant{\nusl}}
+\let\xisl=\xi                 \def\xi{\unslant[-.15]{\xisl}}
+\let\pisl=\pi                 \def\pi{\unslant{\pisl}}
+\let\varpisl=\varpi           \def\varpi{\unslant{\varpisl}}
+\let\rhosl=\rho               \def\rho{\unslant{\rhosl}}
+\let\varrhosl=\varrho         \def\varrho{\unslant{\varrhosl}}
+\let\sigmasl=\sigma           \def\sigma{\unslant{\sigmasl}}
+\let\varsigmasl=\varsigma     \def\varsigma{\unslant{\varsigmasl}}
+\let\tausl=\tau               \def\tau{\unslant{\tausl}}
+\let\upsilonsl=\upsilon       \def\upsilon{\unslant{\upsilonsl}}
+\let\phisl=\phi               \def\phi{\unslant{\phisl}}
+\let\varphisl=\varphi         \def\varphi{\unslant{\varphisl}}
+\let\chisl=\chi               \def\chi{\unslant{\chisl}}
+\let\psisl=\psi               \def\psi{\unslant{\psisl}}
+\let\omegasl=\omega           \def\omega{\unslant{\omegasl}}
 
 % Uppercase Greek letters already usnlanted nothin to do
 
