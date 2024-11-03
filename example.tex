@@ -2,6 +2,7 @@
 \usepackage{unslantgreek}
 
 
+%% Select Fonts
 % Option 1
 \usepackage{tempora} 
 \usepackage{newtxmath}
@@ -13,8 +14,8 @@
 
 
 \begin{document}
-
-\begin{table}[h!]
+\pagestyle{empty}
+\begin{table}
     \centering
     \begin{tabular}{|c|c|c|}
         \hline
@@ -36,9 +37,12 @@
         \verb|\mu|           & $\mu$             & $\slmu$ \\
         \verb|\nu|           & $\nu$             & $\slnu$ \\
         \verb|\xi|           & $\xi$             & $\slxi$ \\
-        \verb|\Pi|           & $\pi$             & $\slpi$ \\
+        \verb|\pi|           & $\pi$             & $\slpi$ \\
+        \verb|\varpi|        & $\varpi$          & $\slvarpi$ \\
         \verb|\rho|          & $\rho$            & $\slrho$ \\
+        \verb|\varrho|       & $\varrho$         & $\slvarrho$ \\
         \verb|\sigma|        & $\sigma$          & $\slsigma$ \\
+        \verb|\varsigma|     & $\varsigma$       & $\slvarsigma$ \\
         \verb|\tau|          & $\tau$            & $\sltau$ \\
         \verb|\upsilon|      & $\upsilon$        & $\slupsilon$ \\
         \verb|\phi|          & $\phi$            & $\slphi$ \\
@@ -47,11 +51,22 @@
         \verb|\psi|          & $\psi$            & $\slpsi$ \\
         \verb|\omega|        & $\omega$          & $\slomega$ \\
         \verb|\zeta|        & $\zeta$            & $\slzeta$ \\
+        \hline
+        \verb|\Gamma|        & $\Gamma$            & -- \\
+        \verb|\Delta|        & $\Delta$            & --  \\
+        \verb|\Theta|        & $\Theta$            & --  \\
+        \verb|\Lambda|       & $\Lambda$           & --  \\
+        \verb|\Xi|           & $\Xi$               & --  \\
+        \verb|\Lambda|       & $\Lambda$           & --  \\
+        \verb|\Pi|           & $\Pi$               & -- \\
+        \verb|\Sigma|        & $\Sigma$            & -- \\
+        \verb|\Upsilon|      & $\Upsilon$          & -- \\
+        \verb|\Phi|          & $\Phi$              & -- \\
+        \verb|\Psi|          & $\Psi$              & -- \\
+        \verb|\Omega|        & $\Psi$              & -- \\
         % Add more Greek letters as needed
         \hline
     \end{tabular}
     \caption{Comparison of Slanted and Upright Greek Letters (Tempora+newtxmath)}
-    \label{tab:greek_comparison}
 \end{table}
-
 \end{document}
