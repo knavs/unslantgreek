@@ -1,6 +1,16 @@
 \documentclass{article}
 \usepackage{unslantgreek}
-\usepackage{array}
+
+
+% Option 1
+\usepackage{tempora} 
+\usepackage{newtxmath}
+
+
+%% Option 2
+%\usepackage{libertinegc}   % Libertine fonts
+%\usepackage[libertine]{newtxmath}
+
 
 \begin{document}
 
@@ -8,36 +18,39 @@
     \centering
     \begin{tabular}{|c|c|c|}
         \hline
-        Symbol & Slanted Version & Upright Version \\
+        Symbol & Upright ver. (new) &  Slanted ver. (old) \\
         \hline
-        alpha        & $\alpha$          & $\slalpha$ \\
-        beta         & $\beta$           & $\slbeta$ \\
-        gamma        & $\gamma$          & $\slgamma$ \\
-        delta        & $\delta$          & $\sldelta$ \\
-        epsilon      & $\epsilon$        & $\slepsilon$ \\
-        zeta         & $\zeta$           & $\slzeta$ \\
-        eta          & $\eta$            & $\sleta$ \\
-        theta        & $\theta$          & $\sltheta$ \\
-        iota         & $\iota$           & $\sliota$ \\
-        kappa        & $\kappa$          & $\slkappa$ \\
-        lambda       & $\lambda$         & $\sllambda$ \\
-        mu           & $\mu$             & $\slmu$ \\
-        nu           & $\nu$             & $\slnu$ \\
-        xi           & $\xi$             & $\slxi$ \\
-        Pi           & $\pi$             & $\slpi$ \\
-        rho          & $\rho$            & $\slrho$ \\
-        sigma        & $\sigma$          & $\slsigma$ \\
-        tau          & $\tau$            & $\sltau$ \\
-        upsilon      & $\upsilon$        & $\slupsilon$ \\
-        phi          & $\phi$            & $\slphi$ \\
-        chi          & $\chi$            & $\slchi$ \\
-        psi          & $\psi$            & $\slpsi$ \\
-        omega        & $\omega$          & $\slomega$ \\
-        zeta        & $\zeta$            & $\slzeta$ \\
+        \verb|\alpha|        & $\alpha$          & $\slalpha$ \\
+        \verb|\beta|         & $\beta$           & $\slbeta$ \\
+        \verb|\gamma|        & $\gamma$          & $\slgamma$ \\
+        \verb|\delta|        & $\delta$          & $\sldelta$ \\
+        \verb|\epsilon|      & $\epsilon$        & $\slepsilon$ \\
+        \verb|\varepsilon|   & $\varepsilon$     & $\slvarepsilon$ \\
+        \verb|\zeta|         & $\zeta$           & $\slzeta$ \\
+        \verb|\eta|          & $\eta$            & $\sleta$ \\
+        \verb|\theta|        & $\theta$          & $\sltheta$ \\
+        \verb|\vartheta|     & $\vartheta$       & $\slvartheta$ \\
+        \verb|\iota|         & $\iota$           & $\sliota$ \\
+        \verb|\kappa|        & $\kappa$          & $\slkappa$ \\
+        \verb|\lambda|       & $\lambda$         & $\sllambda$ \\
+        \verb|\mu|           & $\mu$             & $\slmu$ \\
+        \verb|\nu|           & $\nu$             & $\slnu$ \\
+        \verb|\xi|           & $\xi$             & $\slxi$ \\
+        \verb|\Pi|           & $\pi$             & $\slpi$ \\
+        \verb|\rho|          & $\rho$            & $\slrho$ \\
+        \verb|\sigma|        & $\sigma$          & $\slsigma$ \\
+        \verb|\tau|          & $\tau$            & $\sltau$ \\
+        \verb|\upsilon|      & $\upsilon$        & $\slupsilon$ \\
+        \verb|\phi|          & $\phi$            & $\slphi$ \\
+        \verb|\varphi|       & $\varphi$         & $\slvarphi$ \\
+        \verb|\chi|          & $\chi$            & $\slchi$ \\
+        \verb|\psi|          & $\psi$            & $\slpsi$ \\
+        \verb|\omega|        & $\omega$          & $\slomega$ \\
+        \verb|\zeta|        & $\zeta$            & $\slzeta$ \\
         % Add more Greek letters as needed
         \hline
     \end{tabular}
-    \caption{Comparison of Slanted and Upright Greek Letters (Computer Modern)}
+    \caption{Comparison of Slanted and Upright Greek Letters (Tempora+newtxmath)}
     \label{tab:greek_comparison}
 \end{table}
 
