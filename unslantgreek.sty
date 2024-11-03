@@ -1,0 +1,74 @@
+\ProvidesPackage{unslantgreek}[2024/11/03 Upright Greek Letters with Improved Centering]
+
+% Define save box and length for precise character positioning
+\newsavebox{\foobox}
+\newlength{\foodim}
+
+% Define the \slantbox command to unslant symbols by a specified factor.
+%  - #1 is the optional slant factor (default is -.16 in the \unslant command).
+%  - #2 is the content (typically a Greek letter) to be displayed.
+\newcommand{\slantbox}[2][0]{\mbox{%
+        \sbox{\foobox}{#2}%          % Store the content in \foobox
+        \foodim=#1\wd\foobox         % Calculate shift distance based on slant factor
+        \hskip \wd\foobox            % Horizontal space equal to box width
+        \hskip -0.5\foodim           % Adjust left by half of calculated shift
+        \pdfsave
+        \pdfsetmatrix{1 0 #1 1}%     % Apply slant transformation
+        \llap{\usebox{\foobox}}%     % Draw the content with transformation applied
+        \pdfrestore
+        \hskip 0.5\foodim            % Adjust back to center content
+}}
+
+% Define \unslant with a default slant factor of -.16 (adjustable if needed)
+\newcommand\unslant[2][-.25]{\slantbox[#1]{$#2$}}
+
+% Original Letters as \slalpha, \slbeta, etc.:
+%  - The original (slanted) versions of Greek letters are saved under new names
+%    prefixed with "sl" (e.g., \slalpha, \slbeta).
+%  - This makes the original slanted versions accessible in the document if needed.
+
+% Redefinitions for Upright Letters:
+%  - Each Greek letter now defaults to the unslanted version, achieved by calling
+%    \unslant on the original symbol (saved under the \sl prefix).
+%  - This means the user will see upright versions by default when using standard
+%    Greek letter commands, but can still access the slanted versions with the \sl prefix.
+
+% Lowercase Greek letters
+\let\slalpha=\alpha   \def\alpha{\unslant{\slalpha}}
+\let\slbeta=\beta     \def\beta{\unslant{\slbeta}}
+\let\slgamma=\gamma   \def\gamma{\unslant{\slgamma}}
+\let\sldelta=\delta   \def\delta{\unslant[-.15]{\sldelta}}
+\let\slepsilon=\epsilon \def\epsilon{\unslant[-.1]{\slepsilon}}
+\let\slzeta=\zeta     \def\zeta{\unslant[-.15]{\slzeta}}
+\let\sleta=\eta       \def\eta{\unslant{\sleta}}
+\let\sltheta=\theta   \def\theta{\unslant{\sltheta}}
+\let\sliota=\iota     \def\iota{\unslant{\sliota}}
+\let\slkappa=\kappa   \def\kappa{\unslant{\slkappa}}
+\let\sllambda=\lambda \def\lambda{\unslant{\sllambda}}
+\let\slmu=\mu         \def\mu{\unslant{\slmu}}
+\let\slnu=\nu         \def\nu{\unslant{\slnu}}
+\let\slxi=\xi         \def\xi{\unslant[-.15]{\slxi}}
+\let\slpi=\pi         \def\pi{\unslant{\slpi}}
+\let\slrho=\rho       \def\rho{\unslant{\slrho}}
+\let\slsigma=\sigma   \def\sigma{\unslant{\slsigma}}
+\let\sltau=\tau       \def\tau{\unslant{\sltau}}
+\let\slupsilon=\upsilon \def\upsilon{\unslant{\slupsilon}}
+\let\slphi=\phi       \def\phi{\unslant{\slphi}}
+\let\slchi=\chi       \def\chi{\unslant{\slchi}}
+\let\slpsi=\psi       \def\psi{\unslant{\slpsi}}
+\let\slomega=\omega   \def\omega{\unslant{\slomega}}
+
+% Uppercase Greek letters
+\let\slGamma=\Gamma   \def\Gamma{\unslant{\slGamma}}
+\let\slDelta=\Delta   \def\Delta{\unslant{\slDelta}}
+\let\slTheta=\Theta   \def\Theta{\unslant{\slTheta}}
+%\let\slLambda=\Lambda \def\Lambda{\unslant{\slLambda}}
+\let\slXi=\Xi         \def\Xi{\unslant{\slXi}}
+\let\slPi=\Pi         \def\Pi{\unslant{\slPi}}
+\let\slSigma=\Sigma   \def\Sigma{\unslant{\slSigma}}
+\let\slUpsilon=\Upsilon \def\Upsilon{\unslant{\slUpsilon}}
+\let\slPhi=\Phi       \def\Phi{\unslant{\slPhi}}
+\let\slPsi=\Psi       \def\Psi{\unslant{\slPsi}}
+\let\slOmega=\Omega   \def\Omega{\unslant{\slOmega}}
+
+\endinput
